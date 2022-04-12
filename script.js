@@ -100,6 +100,6 @@ promptUser()
     fs.writeFile('./Yours.md', pageHTML, err => {
       if (err) throw new Error(err);
 
-      console.log('Page created! Check out index.html in this directory to see it!');
+      console.log('Page created! Check out Yours.md in this directory to see it!');
     });
   });

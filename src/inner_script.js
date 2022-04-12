@@ -2,29 +2,29 @@
   module.exports = templateData => {
     // destructure page data by section
   
-    return `
-    # ${templateData.name}
+  return `
+# ${templateData.name}
 
-    # Description:
-    ${templateData.description}
+# Description:
+${templateData.description}
 
-    # Installation:
-    ${templateData.installation}
+# Installation:
+${templateData.installation}
 
-    # Usage:
-    ${templateData.usage}
+# Usage:
+${templateData.usage}
 
-    # Contributing:
-    ${templateData.contributing}
+# Contributing:
+${templateData.contributing}
 
-    # Tests:
-    ${templateData.tests}
-    
-    # Questions:
-    GitHub: https://github.com/${templateData.github}
-    Email: 
+# Tests:
+${templateData.tests}
 
-    # Table of Contents:
+# Questions:
+GitHub: https://github.com/${templateData.github}
+Email: 
+
+# Table of Contents:
           
-    `;
-  };  
+`;
+};  
