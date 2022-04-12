@@ -1,6 +1,6 @@
 const fs = require('fs');
 const inquirer = require('inquirer');
-const generatePage = require('./src/page-template');
+const generatePage = require('./src/inner_script');
 
 const promptUser = () => {
   console.log("You will be asked a series of questions to generate your README");
@@ -35,8 +35,8 @@ const promptUser = () => {
       type: 'input',
       name: 'installation',
       message: 'Provide an Installation Guide (Required)',
-      validate: descriptionInput => {
-        if (descriptionInput) {
+      validate: installationinput => {
+        if (installationinput) {
           return true;
         } else {
           console.log('Input Required.');
@@ -57,49 +57,43 @@ const promptUser = () => {
         }
       }
     },
-    // {
-    //   type: 'confirm',
-    //   name: 'confirmAbout',
-    //   message: 'Would you like to enter some information about yourself for an "About" section?',
-    //   default: true
-    // },
-    // {
-    //   type: 'input',
-    //   name: 'about',
-    //   message: 'Provide some information about yourself:',
-    //   when: ({ confirmAbout }) => confirmAbout
-    // }
+    {
+      type: 'input',
+      name: 'usage',
+      message: 'Provide a Guide on the Usage of your Application (Optional)',
+      default: "No current guide"
+    },
+    {
+      type: 'input',
+      name: 'contributing',
+      message: 'Who is Contributing to the Repository? (Required)',
+      validate: contributinginput => {
+        if (contributinginput) {
+          return true;
+        } else {
+          console.log('Input Required');
+          return false;
+        }
+      }
+    },
+    {
+      type: 'input',
+      name: 'tests',
+      message: 'Any Tests that You Have Done? (Optional)',
+      default: "Tests have yet to be conducted."
+    },
+    
+    {
+      type: 'checkbox',
+      name: 'languages',
+      message: 'What lliscences are you using? (Check all that apply)',
+      choices: ['JavaScript', 'HTML', 'CSS', 'ES6', 'jQuery', 'Bootstrap', 'Node']
+    },
+  
   ]);
 };
 
-const promptProject = portfolioData => {
-
-  // If there's no 'projects' array property, create one
-  if (!portfolioData.projects) {
-    portfolioData.projects = [];
-  }
-  return inquirer
-    .prompt([
-     
-      {
-        type: 'checkbox',
-        name: 'languages',
-        message: 'What lliscences are you using? (Check all that apply)',
-        choices: ['JavaScript', 'HTML', 'CSS', 'ES6', 'jQuery', 'Bootstrap', 'Node']
-      },
-    ])
-    .then(projectData => {
-      portfolioData.projects.push(projectData);
-      if (projectData.confirmAddProject) {
-        return promptProject(portfolioData);
-      } else {
-        return portfolioData;
-      }
-    });
-};
-
 promptUser()
-  .then(promptProject)
   .then(portfolioData => {
     const pageHTML = generatePage(portfolioData);
 

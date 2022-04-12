@@ -1,26 +1,28 @@
 // export function to generate entire page
   module.exports = templateData => {
     // destructure page data by section
-    const { projects, about, ...header } = templateData;
   
     return `
-    # ${header.name}
+    # ${templateData.name}
 
     # Description:
-    ${projects.description}
+    ${templateData.description}
 
     # Installation:
-    ${header.installation}
+    ${templateData.installation}
 
     # Usage:
+    ${templateData.usage}
 
     # Contributing:
+    ${templateData.contributing}
 
     # Tests:
-
+    ${templateData.tests}
+    
     # Questions:
-    My GitHub: https://github.com/${header.github}
-    My Email: 
+    GitHub: https://github.com/${templateData.github}
+    Email: 
 
     # Table of Contents:
           
