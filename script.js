@@ -33,6 +33,19 @@ const promptUser = () => {
     },
     {
       type: 'input',
+      name: 'email',
+      message: 'Enter your Email So People can Contact you (Required)',
+      validate: emailInput => {
+        if (emailInput) {
+          return true;
+        } else {
+          console.log('You Must Enter an Email.');
+          return false;
+        }
+      }
+    },
+    {
+      type: 'input',
       name: 'installation',
       message: 'Provide an Installation Guide (Required)',
       validate: installationinput => {
@@ -84,10 +97,20 @@ const promptUser = () => {
     },
     
     {
-      type: 'checkbox',
-      name: 'languages',
-      message: 'What lliscences are you using? (Check all that apply)',
-      choices: ['JavaScript', 'HTML', 'CSS', 'ES6', 'jQuery', 'Bootstrap', 'Node']
+      type: 'list',
+      name: 'badge',
+      message: 'What lliscence are you using? (Check all that apply)',
+      choices: ['None', 'Apache_2.0', 'GNU_General_Public_v3.0', 'MIT',
+      'BSD_2-Clause_"Simplified"',
+      'BSD_3-Clause_"New"_or_"Revised"',
+      'Boost_Software_1.0',
+      'Creative_Commons_Zero_v1.0_Universal',
+      'Eclipse_Public_2.0',
+      'GNU_Affero_General_Public_v3.0',
+      'GNU_General_Public_v2.0',
+      'GNU_Lesser_General_Public_v2.1',
+      'Mozilla_Public_2.0',
+      'The_Unlicense']
     },
   
   ]);
@@ -100,6 +123,6 @@ promptUser()
     fs.writeFile('./Yours.md', pageHTML, err => {
       if (err) throw new Error(err);
 
-      console.log('Page created! Check out Yours.md in this directory to see it!');
+      console.log('README created! Check out Yours.md in this directory to see it!');
     });
   });
