@@ -1,9 +1,9 @@
  # Readme-Generator
 
-[![Generic badge](https://img.shields.io/badge/MIT-License-ff69b4.svg)](https://shields.io/)
+[![Generic badge](https://img.shields.io/badge/MIT-License-orangered.svg)](https://shields.io/)
 
 # Description:
-This application generates readmes.
+Generates Readme
 
 # Table of Contents:
 
@@ -18,7 +18,7 @@ This application generates readmes.
 [Questions](#Questions)
 
 # Installation:
-click on the link provided below:https://github.com/csomervil/A-Generator-that-Generates-READMEs/archive/refs/heads/main.zip
+Click the link
 
 # Usage:
 No current guide.
