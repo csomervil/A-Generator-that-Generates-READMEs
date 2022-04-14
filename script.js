@@ -1,7 +1,10 @@
+/* Defining Node Functions */
 const fs = require('fs');
 const inquirer = require('inquirer');
+/* Setting the Page to Generate from */
 const generatePage = require('./src/inner_script');
 
+/* Creating Prompts */
 const promptUser = () => {
   console.log("You will be asked a series of questions to generate your README");
   return inquirer.prompt([
@@ -116,6 +119,7 @@ const promptUser = () => {
   ]);
 };
 
+/* Taking the Array of Prompt Answers and Appending new Items as well as Modifying Current Ones */
 promptUser()
   .then(portfolioData => {
     portfolioData.title = portfolioData.name.replaceAll(' ','-');
@@ -139,6 +143,7 @@ promptUser()
     //   portfolioData.email === "No valid email provided";
     // }
 
+    /* Genrating the md File */
     const pageREAD = generatePage(portfolioData);
     fs.writeFile('./Yours.md', pageREAD, err => {
       if (err) throw new Error(err);

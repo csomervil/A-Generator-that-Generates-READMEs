@@ -1,4 +1,4 @@
-// export function to generate entire page
+// Using Large String with Prompt Values to Generate Page
   module.exports = templateData => {
 
   return ` # ${templateData.title}
