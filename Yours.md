@@ -1,9 +1,9 @@
-# Readme-Generator
+ # Readme-Generator
 
-[![Generic badge](https://img.shields.io/badge/No-License-inactive.svg)](https://shields.io/)
+[![Generic badge](https://img.shields.io/badge/MIT-License-ff69b4.svg)](https://shields.io/)
 
 # Description:
-This application uses node.js to generate a README.md. The README.md will be titled Yours.md within the file directory.
+This application generates readmes.
 
 # Table of Contents:
 
@@ -18,18 +18,18 @@ This application uses node.js to generate a README.md. The README.md will be tit
 [Questions](#Questions)
 
 # Installation:
-click the link: https://github.com/csomervil/A-Generator-that-Generates-READMEs
+click on the link provided below:https://github.com/csomervil/A-Generator-that-Generates-READMEs/archive/refs/heads/main.zip
 
 # Usage:
 No current guide.
 
 # License:
-This repository is not opperating under a license.
+This repository is opperating under MIT license
 
 # Contributing:
 csomervil
 
-#Tests:
+# Tests:
 Tests have yet to be conducted.
 
 # Questions:
