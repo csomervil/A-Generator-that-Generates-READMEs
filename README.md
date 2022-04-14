@@ -10,7 +10,8 @@ The link to downloading the directory:
 https://github.com/csomervil/A-Generator-that-Generates-READMEs/archive/refs/heads/main.zip
 
 # Video Preview
-
+The link to downloading and viewing the video:
+https://github.com/csomervil/A-Generator-that-Generates-READMEs/blob/main/demo_video.mp4
 
 Demo results:
 https://github.com/csomervil/A-Generator-that-Generates-READMEs/blob/main/Yours.md
