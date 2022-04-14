@@ -8,7 +8,7 @@ const promptUser = () => {
     {
       type: 'input',
       name: 'name',
-      message: 'What Should the Title be? (Required)',
+      message: 'Enter Your Title Name (Required)',
       validate: nameInput => {
         if (nameInput) {
           return true;
@@ -60,7 +60,7 @@ const promptUser = () => {
     {
       type: 'input',
       name: 'description',
-      message: 'Provide a General description of the project (Required)',
+      message: 'Provide a General Description of the Project (Required)',
       validate: descriptionInput => {
         if (descriptionInput) {
           return true;
@@ -74,7 +74,7 @@ const promptUser = () => {
       type: 'input',
       name: 'usage',
       message: 'Provide a Guide on the Usage of your Application (Optional)',
-      default: "No current guide"
+      default: "No current guide."
     },
     {
       type: 'input',

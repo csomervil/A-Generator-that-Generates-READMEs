@@ -1,34 +1,12 @@
 // export function to generate entire page
   module.exports = templateData => {
 
-  return `
+  return ` # ${templateData.title}
 
 [![Generic badge](https://img.shields.io/badge/${templateData.badge}-License-${templateData.colour}.svg)](https://shields.io/)
 
-# ${templateData.title}
-
 # Description:
 ${templateData.description}
-
-# Installation:
-${templateData.installation}
-
-# Usage:
-${templateData.usage}
-
-# Contributing:
-${templateData.contributing}
-
-#Tests:
-${templateData.tests}
-
-# License:
-${templateData.license}
-
-
-# Questions:
-GitHub: https://github.com/${templateData.github}
-Email: <${templateData.email}>
 
 # Table of Contents:
 
@@ -41,5 +19,26 @@ Email: <${templateData.email}>
 [Usage](#Usage)
 
 [Questions](#Questions)
+
+# Installation:
+${templateData.installation}
+
+# Usage:
+${templateData.usage}
+
+# License:
+${templateData.license}
+
+# Contributing:
+${templateData.contributing}
+
+# Tests:
+${templateData.tests}
+
+# Questions:
+GitHub: https://github.com/${templateData.github}
+Email: <${templateData.email}>
+
+
 `;
 };  
