@@ -3,9 +3,9 @@
 
   return `
 
-[![Generic badge](https://img.shields.io/badge/${templateData.badge}-License-blue.svg)](https://shields.io/)
+[![Generic badge](https://img.shields.io/badge/${templateData.badge}-License-${templateData.colour}.svg)](https://shields.io/)
 
-# ${templateData.name}
+# ${templateData.title}
 
 # Description:
 ${templateData.description}
@@ -19,14 +19,27 @@ ${templateData.usage}
 # Contributing:
 ${templateData.contributing}
 
-# Tests:
+#Tests:
 ${templateData.tests}
+
+# License:
+${templateData.license}
+
 
 # Questions:
 GitHub: https://github.com/${templateData.github}
-Email: ${templateData.email}
+Email: <${templateData.email}>
 
 # Table of Contents:
-          
+
+[Title](#${templateData.title})
+
+[Installation](#Installation)
+
+[Description](#Description)
+
+[Usage](#Usage)
+
+[Questions](#Questions)
 `;
 };  

@@ -118,9 +118,29 @@ const promptUser = () => {
 
 promptUser()
   .then(portfolioData => {
-    const pageHTML = generatePage(portfolioData);
+    portfolioData.title = portfolioData.name.replaceAll(' ','-');
 
-    fs.writeFile('./Yours.md', pageHTML, err => {
+    if (portfolioData.badge === 'None') {
+      portfolioData.license = "This repository is not opperating under a license."
+      portfolioData.badge = "No"
+      portfolioData.colour = "inactive";
+    } else {
+      portfolioData.license  = "This repository is opperating under " + portfolioData.badge + " license";
+      var colours = ['brightgreen', 'greenyellow', 'greenyellow', 'orangered', 'bluelightgrey',
+      'success', 'important', "critical", "informational", "inactive",
+      "blueviolet", "ff69b4", "9cf"];
+      var colourindex = Math.floor(Math.random() * 12);
+      portfolioData.colour = colours[colourindex];
+      
+    }
+    
+    // var valid = /\S+@\S+\.\S+/;
+    // if (valid.test(portfolioData.email) === false) {
+    //   portfolioData.email === "No valid email provided";
+    // }
+
+    const pageREAD = generatePage(portfolioData);
+    fs.writeFile('./Yours.md', pageREAD, err => {
       if (err) throw new Error(err);
 
       console.log('README created! Check out Yours.md in this directory to see it!');
